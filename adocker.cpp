@@ -38,33 +38,14 @@ bool hasAccess(const char* pathname, int mode){
   std::string hostPath = getHostPath(newPath);
   if (access(hostPath.c_str(), mode) == 0)
     return true;
-  return false;
-}
 
-bool mountAsRO(std::string comp){
-  int path_length = comp.size();
-  if (path_length < 3)
-    return false;
-
-  std::string mode = comp.substr(path_length - 3, path_length);
-  if (mode == ":ro"){
-    return true;
-  }
+  std::cerr << "You don't have write permission on \"" << hostPath << "\"" <<  std::endl;
   return false;
 }
 
 bool check_validity(const char* comp){
   std::string tmp(comp);
   if (!hasAccess(comp, W_OK)){
-    if (hasAccess(comp, R_OK)){
-      if (mountAsRO(tmp)){
-        return true;
-      }else{
-        std::cerr << "You only have read permission on \"" << tmp << "\"" << " please mount it as read-only volume" <<  std::endl;
-        return false;
-      }
-    }
-    std::cerr << "You don't have any permission on \"" << tmp << "\"" <<  std::endl;
     return false;
   }
   return true;

@@ -1,13 +1,13 @@
 # adocker
 This is the program that wrap the docker program  to restrict the docker share volume command.
 
-## Why I make this program ##
+## Why I make this program? ##
 Here is the situation:
 - We have many users need to run `docker` on servers.
 - The server has private data and important information, and users are restricted access to some data.
 - Original `docker` allows users to mount any folder (share volume) on the host machine to docker containers. It does not support to add constrains on the share volume (see [security issues](https://docs.docker.com/engine/security/security/)).
 
-## What this program can do ##
+## What this program can do? ##
 - This program is just a wrapper that make sure user cannot mount shared volume that they does not have write permission.
 
 ## Examples ##
