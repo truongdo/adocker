@@ -26,5 +26,5 @@ will be refused, and the below message is printed out
 `You don't have write permission on "/etc"`.
 
 ## Installation ##
-- Change the `docker` path: `mv /usr/bin/docker /usr/bin/dkr`
+- Change the `docker` path: `mv /usr/bin/docker /usr/bin/dkr` (The purpose is to hide the default docker path)
 - Modify the default `DOCKER` variable at `/etc/default/docker` to the new path: DOCKER="/usr/bin/dkr"
