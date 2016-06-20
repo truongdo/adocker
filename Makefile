@@ -15,6 +15,9 @@ endif
 BIN = adocker
 OBJECTS = adocker.o
 
+install:
+	cp adocker /usr/local/bin/adocker
+
 $(BIN): $(OBJECTS)
 	$(CXX) -o $@ $(OBJECTS) $(WARN_FLAGS) $(STD_FLAGS) $(LINKFLAGS)
 
