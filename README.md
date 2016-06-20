@@ -11,4 +11,4 @@ The follow command with original docker will let user to mount the etc folder in
 Using `adocker`, we can restrict the permission,
 
 ```adocker run -it -v /etc:/etc ubuntu```
--> output: You don't have write permission on "/etc:/data"
+-> output: You don't have write permission on "/etc"
