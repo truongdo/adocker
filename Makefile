@@ -15,6 +15,8 @@ endif
 BIN = adocker
 OBJECTS = adocker.o
 
+all: $(BIN)
+
 install:
 	cp adocker /usr/local/bin/adocker
 
