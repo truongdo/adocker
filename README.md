@@ -24,3 +24,7 @@ Now, using `adocker`, we can restrict the permission,
 The program will first check if the user have write permission on `/etc`, if they don't, the program
 will be refused, and the below message is printed out
 `You don't have write permission on "/etc"`.
+
+## Installation ##
+- Change the `docker` path: `mv /usr/bin/docker /usr/bin/dkr`
+- Modify the default `DOCKER` variable at `/etc/default/docker` to the new path: DOCKER="/usr/bin/dkr"
