@@ -32,5 +32,4 @@ will be refused, and the below message is printed out
 
 Note: This is a very simple approach and it is still possible that ones can
 mount the folder that they don't have permission by running docker with the path `/usr/bin/dkr`.
-
 To make it more secure and completely block people from mounting folders that they don't have permission, try the branch `docker-patch` of this project.
