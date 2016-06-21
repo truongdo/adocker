@@ -27,5 +27,6 @@ will be refused, and the below message is printed out
 
 ## Installation ##
 1. Clones [Docker](https://github.com/docker/docker)
-2. Applies this patch: `git apply --stat docker.patch`
+2. Checkout tag v1.11.2 `git checkout v1.11.2`
+2. Applies this patch: `patch -p1 < docker.1.11.2.patch`
 3. Builds docker using [this tutorial](https://docs.docker.com/v1.5/contributing/devenvironment/)
