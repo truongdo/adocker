@@ -27,5 +27,5 @@ will be refused, and the below message is printed out
 
 ## Installation ##
 1. Clones [Docker](https://github.com/docker/docker)
-2. Applies this patch: `git apply --stat fix_empty_poster.patch`
+2. Applies this patch: `git apply --stat docker.patch`
 3. Builds docker using [this tutorial](https://docs.docker.com/v1.5/contributing/devenvironment/)
