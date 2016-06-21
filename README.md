@@ -1,5 +1,5 @@
 # adocker
-This is the program that wrap the docker program  to restrict the docker share volume command.
+Instead of the simple wrapper approach in the master branch, this patch modify directly [the docker source code](https://github.com/docker/docker) .
 
 ## Why I make this program? ##
 Here is the situation:
@@ -26,5 +26,6 @@ will be refused, and the below message is printed out
 `You don't have write permission on "/etc"`.
 
 ## Installation ##
-- Change the `docker` path: `mv /usr/bin/docker /usr/bin/dkr` (The purpose is to hide the default docker path)
-- Modify the default `DOCKER` variable at `/etc/default/docker` to the new path: DOCKER="/usr/bin/dkr"
+1. Clones [Docker](https://github.com/docker/docker)
+2. Applies this patch: `git apply --stat fix_empty_poster.patch`
+3. Builds docker using [this tutorial](https://docs.docker.com/v1.5/contributing/devenvironment/)
