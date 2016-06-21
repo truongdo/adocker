@@ -10,6 +10,7 @@ Here is the situation:
 ## What this program can do? ##
 - This program is just a wrapper that make sure user cannot mount shared volume that they does not have write permission.
 
+
 ## Examples ##
 The follow command with original docker will let users to mount the `etc` folder into the container, and the user will have fully access to the content,
 
@@ -28,3 +29,8 @@ will be refused, and the below message is printed out
 ## Installation ##
 - Change the `docker` path: `mv /usr/bin/docker /usr/bin/dkr` (The purpose is to hide the default docker path)
 - Modify the default `DOCKER` variable at `/etc/default/docker` to the new path: DOCKER="/usr/bin/dkr"
+
+Note: This is a very simple approach and it is still possible that ones can
+mount the folder that they don't have permission by running docker with the path `/usr/bin/dkr`.
+
+To make it more secure and completely block people from mounting folders that they don't have permission, try the branch `docker-patch` of this project.
